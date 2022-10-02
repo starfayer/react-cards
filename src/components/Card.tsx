@@ -1,18 +1,46 @@
 import React from 'react';
-import { CardData as CardProps } from 'utils/types';
+import { CardData } from 'utils/types';
 
-export const Card = (): JSX.Element => {
+interface CardProps {
+  data: CardData;
+}
+
+export const Card = (props: CardProps): JSX.Element => {
+  const data = props.data;
   return (
-    <div className="card" style={{ width: '18rem' }}>
-      <img src="..." className="card-img-top" alt="card"></img>
+    <div className="card card-custom rounded" style={{ width: '80%', height: '400px' }}>
+      <a
+        className="card-image-link"
+        href={data.image.webPage}
+        style={{ backgroundImage: `url(${data.image.small})` }}
+        target="_blank"
+        rel="noreferrer"
+      ></a>
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">
-          Some quick example text to build on the card title and make up the bulk of the card&apos;s
-          content.
+        <div className="d-flex justify-content-between align-items-center">
+          <a href={data.author.link} target="_blank" className="link-primary" rel="noreferrer">
+            <span>{data.author.username}</span>
+          </a>
+          <div className="d-flex align-items-center">
+            <div>{!data.likes ? 0 : data.likes} likes</div>
+            <div className="heart-icon"></div>
+          </div>
+        </div>
+        <p className="card-text card-text-height">
+          {!data.title ? (
+            <p>
+              Random card from{' '}
+              <a href="https://unsplash.com/" target="_blank" rel="noreferrer">
+                unsplash.com
+              </a>
+              . Author could describe it but not this time {':(('}
+            </p>
+          ) : (
+            <p style={{ fontWeight: '500' }}>{data.title}</p>
+          )}
         </p>
-        <a href="#" className="btn btn-primary">
-          Go somewhere
+        <a href={data.image.webPage} target="_blank" className="btn btn-secondary" rel="noreferrer">
+          Open unspash photo
         </a>
       </div>
     </div>

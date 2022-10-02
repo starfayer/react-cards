@@ -3,7 +3,39 @@
   text-align: center;
 }
 
+body {
+  background-color: #EEE3CB;
+}
+
 .container-search {
   width: 80%;
   margin: auto auto 20px;
+}
+
+.card-custom {
+  background-color: #D7C0AE;
+}
+.card-image-link {
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.heart-icon {
+  background: url("/src/static/heart-fill.svg") no-repeat;
+  width: 20px;
+  height: 40px;
+  background-position: center;
+}
+
+.card-text-height { 
+  max-height: 110px;
+}
+.grid {
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 20px;
+  column-gap: 10px;
+  justify-items: center;
 }

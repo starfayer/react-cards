@@ -1,5 +1,9 @@
 export interface CardData {
-  image: string;
+  image: {
+    small: string;
+    large: string;
+    webPage: string;
+  };
   title?: string;
   author: {
     username: string;
@@ -14,6 +18,7 @@ export interface ApiData {
   description: string;
   urls: {
     small: string;
+    full: string;
   };
   links: {
     html: string;
