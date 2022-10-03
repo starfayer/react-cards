@@ -27,17 +27,15 @@ export const Card = (props: CardProps): JSX.Element => {
           </div>
         </div>
         <p className="card-text card-text-height">
-          {!data.title ? (
-            <p>
-              Random card from{' '}
-              <a href="https://unsplash.com/" target="_blank" rel="noreferrer">
-                unsplash.com
-              </a>
-              . Author could describe it but not this time {':(('}
-            </p>
-          ) : (
-            <p style={{ fontWeight: '500' }}>{data.title}</p>
-          )}
+          {!data.title
+            ? 'Random card from ' +
+              (
+                <a href="https://unsplash.com/" target="_blank" rel="noreferrer">
+                  unsplash.com
+                </a>
+              ) +
+              '. Author could describe it but not this time :(('
+            : data.title}
         </p>
         <a href={data.image.webPage} target="_blank" className="btn btn-secondary" rel="noreferrer">
           Open unspash photo

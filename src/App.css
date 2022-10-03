@@ -22,7 +22,7 @@ body {
 }
 
 .heart-icon {
-  background: url("/src/static/heart-fill.svg") no-repeat;
+  background: url("/src/static/like.svg") no-repeat;
   width: 20px;
   height: 40px;
   background-position: center;
@@ -32,7 +32,7 @@ body {
   max-height: 110px;
 }
 .grid {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   row-gap: 20px;
