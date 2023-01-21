@@ -7,6 +7,16 @@ interface CardProps {
 
 export const Card = (props: CardProps): JSX.Element => {
   const data = props.data;
+  const description = (
+    <>
+      Random card from{' '}
+      <a href="https://unsplash.com/" target="_blank" rel="noreferrer">
+        unsplash.com
+      </a>
+      . Author could describe it but not this time :((
+    </>
+  );
+
   return (
     <div className="card card-custom rounded" style={{ width: '80%', height: '400px' }}>
       <a
@@ -26,17 +36,7 @@ export const Card = (props: CardProps): JSX.Element => {
             <div className="heart-icon"></div>
           </div>
         </div>
-        <p className="card-text card-text-height">
-          {!data.title
-            ? 'Random card from ' +
-              (
-                <a href="https://unsplash.com/" target="_blank" rel="noreferrer">
-                  unsplash.com
-                </a>
-              ) +
-              '. Author could describe it but not this time :(('
-            : data.title}
-        </p>
+        <p className="card-text card-text-height">{!data.title ? description : data.title}</p>
         <a href={data.image.webPage} target="_blank" className="btn btn-secondary" rel="noreferrer">
           Open unspash photo
         </a>

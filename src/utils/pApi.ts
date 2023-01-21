@@ -1,6 +1,8 @@
 const ACCESS_KEY = 'ge4dOpKIumal1ZDwduYLxOyHcbU_g5af-M7m82vTu0w';
+const defaultPhotoCount = 12;
 
-async function getRandomPhotos(count: number) {
+async function getRandomPhotos(count?: number) {
+  if (!count) count = defaultPhotoCount;
   const url = `https://api.unsplash.com/photos/random?client_id=${ACCESS_KEY}&count=${count}`;
 
   const res = fetch(url)
