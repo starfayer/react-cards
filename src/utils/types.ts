@@ -31,3 +31,14 @@ export interface ApiData {
     };
   };
 }
+
+export interface FormData {
+  authorLink?: string;
+  authorNickname?: string;
+  imageLink?: string;
+}
+
+export enum SelectValues {
+  particular = 'particaular',
+  random = 'random',
+}

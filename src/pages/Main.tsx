@@ -49,7 +49,11 @@ export class Main extends React.Component {
           <Search value={this.state.searchValue} changeHandler={this._setSearch.bind(this)} />
         </div>
         <div className="content">
-          <Gallery data={test as Array<ApiData>} filterValue={this.state.searchValue} />
+          <Gallery
+            data={test as Array<ApiData>}
+            filterValue={this.state.searchValue}
+            customForm={true}
+          />
         </div>
       </div>
     );
