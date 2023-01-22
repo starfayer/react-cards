@@ -1,6 +1,7 @@
 {
   "name": "components",
   "version": "0.1.0",
+  "homepage": "https://starfayer.github.io/react-cards",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -22,7 +23,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "pre-commit": "lint-staged",
   "browserslist": {
@@ -47,6 +50,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.1",
     "eslint-plugin-react": "^7.31.8",
+    "gh-pages": "^5.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "2.7.1",
     "react-router-dom": "^6.4.1",
